@@ -9,7 +9,7 @@ for i in doc.paragraphs:
     full_text.append(i.text)
 text = ' '.join(full_text)
 
-list = '.,!?;:"()[]{}«»—'  # список знаков препинания для удаления
+list = '.,!?;:"()[]{}«»—'  # список знаков препинания
 for a in list:
     text = text.replace(a, '')  # удаляем каждый знак препинания из текста
 
@@ -22,7 +22,7 @@ pd.DataFrame(list_word, columns=['Слово', 'Количество', 'Част
 
 letters = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'  # строка с алфавитом
 b = [i for i in text if i in letters]  # отбираем только русские буквы
-counter_letter = Counter(b)  # считаем частоту каждой буквы
+counter_letter = Counter(b)  # считаем частоту 
 
 plt.bar(counter_letter.keys(), counter_letter.values())  # создаем столбчатую диаграмму
 plt.ylabel('Количество')  # подпись для  оси y
