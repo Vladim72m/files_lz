@@ -20,13 +20,13 @@ all_word = len(s)  # общее количество слов в тексте
 list_word = [(word, amt, (amt / all_word) * 100) for word, amt in counter_word.items()]
 pd.DataFrame(list_word, columns=['Слово', 'Количество', 'Частота (%)']).to_excel('s.xlsx', index=False)  # сохраняем в Excel
 
-letters = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'  # строка с русским алфавитом
+letters = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'  # строка с алфавитом
 b = [i for i in text if i in letters]  # отбираем только русские буквы
 counter_letter = Counter(b)  # считаем частоту каждой буквы
 
 plt.bar(counter_letter.keys(), counter_letter.values())  # создаем столбчатую диаграмму
-plt.ylabel('Количество')  # подпись для  оси игрик
-plt.xlabel('Буквы')  # подпись для горизонтальной оси икс
+plt.ylabel('Количество')  # подпись для  оси y
+plt.xlabel('Буквы')  # подпись для горизонтальной оси x
 plt.show()  # показываем график
 
 for lett, amt in counter_letter.items():
